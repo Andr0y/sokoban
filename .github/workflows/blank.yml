@@ -3,7 +3,7 @@ name: Mirroring
 on: [push, pull_request]
 
 env:
-  MIRROR_URL: 'git@github.com:EpitechPromo2026/B-PSU-200-LYN-2-1-mysokoban-andrej.royan.git'
+  MIRROR_URL: 'git@github.com:Andr0y/sokoban.git'
 
 jobs:
   Mirror:
