@@ -12,6 +12,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@github.com:Andr0y/sokoban.git
+            ${{ secrets.MIRROR_URL }}
           ssh_private_key:
             ${{ secrets.SSH_PRIVATE_KEY }}
