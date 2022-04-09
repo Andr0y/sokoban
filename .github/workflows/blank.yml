@@ -2,6 +2,9 @@ name: Mirroring
 
 on: [push, pull_request]
 
+env:
+  URL: ${{ secrets.MIRROR_URL }}
+
 jobs:
   Mirror:
     runs-on: ubuntu-latest
@@ -12,6 +15,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            ${{ secrets.MIRROR_URL }}
+            URL
           ssh_private_key:
             ${{ secrets.SSH_PRIVATE_KEY }}
