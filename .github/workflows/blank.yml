@@ -12,6 +12,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            ${{ secrets.MIRROR_URL }}
+            git@github.com:EpitechPromo2026/B-PSU-200-LYN-2-1-mysokoban-andrej.royan.git
           ssh_private_key:
             ${{ secrets.SSH_PRIVATE_KEY }}
