@@ -3,7 +3,7 @@ name: Mirroring
 on: [push, pull_request]
 
 env:
-  URL: ${{ secrets.MIRROR_URL }}
+  URL: '${{ secrets.MIRROR_URL }}'
 
 jobs:
   Mirror:
