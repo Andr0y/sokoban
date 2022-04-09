@@ -5,15 +5,16 @@ on: [push, pull_request]
 jobs:
   Mirror:
     runs-on: ubuntu-latest
+    environment:
+      name: MY_URL
+      url: ${{ secrets.MIRROR_URL }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
-          env:
-            URL: ${{ secrets.MIRROR_URL }}
           target_repo_url:
-            URL
+            MY_URL.url
           ssh_private_key:
             ${{ secrets.SSH_PRIVATE_KEY }}
