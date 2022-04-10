@@ -6,7 +6,11 @@ env:
   MIRROR_URL: 'git@github.com:Andr0y/sokoban.git'
 
 jobs:
-  Mirror:
+  check_repository_cleanliness:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+  push_to_mirror:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
