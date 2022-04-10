@@ -9,6 +9,9 @@ jobs:
   check_repository_cleanliness:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
   push_to_mirror:
     runs-on: ubuntu-latest
